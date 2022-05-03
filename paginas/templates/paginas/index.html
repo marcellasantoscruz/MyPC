@@ -1,0 +1,31 @@
+{% extends 'paginas/modelo.html' %}
+
+{% load static %}
+
+{% block titulo %}
+<title>Página Inicial</title>
+{% endblock %}
+
+{% block css %}
+<link href="{% static 'css/tela_inicial.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block conteudo %}
+<div class="align-d">
+    <h5 class="align-t">Aprenda a montar e consertar computadores de um jeito interativo e intuitivo. 
+        O MyPC é uma plataforma de ensino grátis que tem como objetivo facilitar e deixar 
+        mais divertido a educação online!</h5>    
+    <div class="align-b">
+        {% if request.user.is_authenticated %}
+        <p>Seja Bem-vindo!!!</p>
+        {% else %}
+        <p>Entre ou crie uma conta!</p>
+        <a class="btn btn-outline-success" href="#">Inscreva-se agora</a>
+        <div class="pt-md-2">
+            <a class="btn btn-outline-primary" href="{% url 'login' %}">Já tenho uma conta</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
