@@ -5,16 +5,15 @@
 {% load crispy_forms_tags %}
 
 {% block conteudo %}
-<div class="row text-center">
+<div class="row">
     <div class="col-md-4 mx-auto">
-        <h3>Entrar</h3>
+        <h3>Cadastro</h3>
         <hr>
         <form class="form-signin text-center" method="POST">
             {% csrf_token %}
             {{ form|crispy }}
-            <button class="btn btn-lg btn-primary mt-3" type="submit">Entrar</button>
+            <button class="btn btn-lg btn-primary mt-3" type="submit">Confirmar</button>
         </form>
     </div>
-    <img class="mx-auto d-block" src="{% static 'img/imagem_login.gif' %}" style="width: 300px; height: 300px;">
 </div>
 {% endblock %}

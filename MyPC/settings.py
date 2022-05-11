@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'paginas.apps.PaginasConfig',
     'usuarios.apps.UsuariosConfig',
     'crispy_forms',
+    "django_static_fontawesome",
 ]
 
 # Crispy Forms
@@ -138,6 +139,6 @@ STATICFILES_DIRS = [
 
 # Configurações de Autenticação
 
-LOGIN_REDIRECT_URL = 'index'
+LOGIN_REDIRECT_URL = 'modulos'
 LOGOUT_REDIRECT_URL = 'login'
 LOGIN_URL = 'login'

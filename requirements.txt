@@ -1,7 +1,6 @@
-asgiref==3.5.0
+asgiref==3.5.1
 Django==4.0.4
-django-braces==1.15.0
-django-cleanup==6.0.0
 django-crispy-forms==1.14.0
+django-static-fontawesome==5.15.4.0
 sqlparse==0.4.2
 tzdata==2022.1
