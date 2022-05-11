@@ -1,0 +1,80 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="{% static 'img/favicon-mpc.png' %}">
+        {% block titulo %}
+        <title>Modelo</title>
+        {% endblock %}
+
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'css/fontawesome.min.css' %}" rel="stylesheet">
+
+        <style>
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+                }
+            }
+        </style>
+
+        <link href="{% static 'css/modelo_menu.css' %}" rel="stylesheet">
+
+        {% block css %}
+
+        {% endblock %}
+    </head>
+    <body>
+        {% block menu %}
+        <nav class="navbar navbar-expand-lg font-115 border-bottom shadow-sm">
+            <div class="container">
+                <a class="navbar-brand text-dark" href="{% url 'index' %}">MyPC</a>
+
+                {% if request.user.is_authenticated %}
+                <div class="dropdown">
+                    <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
+                     <span id="username">{{ request.user }}</span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <a class="dropdown-item" href="#">Meus dados</a>
+                      <a class="dropdown-item" href="#">Alterar senha</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="{% url 'logout' %}">Sair</a>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </nav>
+        {% endblock %}
+
+        <div class="container px-3 py-3 pt-md-5 pb-md-4 mx-auto">
+            {% block conteudo %}
+            <h1 class="display-4">Conteudo</h1>
+            {% endblock %}
+        </div>
+
+        {% block rodape %}
+        <div class="container border-top text-muted text-center">
+            <small class="d-block">MyPC &copy; 2022</small>
+            <small>Desenvolvido por: #####</small>
+        </div>
+        {% endblock %}
+
+        <script type="text/javascript" src="{% static 'js/jquery-3.3.1.slim.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    </body>
+</html>
