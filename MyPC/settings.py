@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     'paginas.apps.PaginasConfig',
     'usuarios.apps.UsuariosConfig',
+    'perg_resp.apps.PergRespConfig',
     'crispy_forms',
     "django_static_fontawesome",
 ]
