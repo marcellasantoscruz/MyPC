@@ -1,0 +1,63 @@
+{% extends 'paginas/modelo.html' %}
+
+{% load static %}
+
+{% block menu %}
+<nav class="navbar navbar-expand-lg font-115 border-bottom shadow-sm">
+    <div class="container">
+        <a class="navbar-brand text-dark" href="{% url 'modulos' %}">MyPC</a>
+    </div>
+</nav>
+{% endblock %}
+
+{% block conteudo %}
+<div class="container mt-2">
+    <div class="d-flex justify-content-center">
+        <div class="col-lg-9">
+            <article>
+                <section class="mb-5">
+                    <h3 class="fw-bolder mb-4 mt-5">Geração dos processadores:</h3>
+                    <p class="fs-5 mb-4">
+                        Quanto maior a geração, melhor o desempenho do processador. As gerações de processadores
+                        apresentam um avanço tecnológico em comparação à geração anterior.
+                    </p>
+                    <p class="fs-5 mb-4">
+                        Assim, a 8ª geração pode ser descrita como o "modelo 2018" e a 9ª geração o "modelo 2019" e
+                        assim por diante.
+                    </p>
+                    <h3 class="fw-bolder mb-4 mt-5">Single-Core ou Multi-Core</h3>
+                    <p class="fs-5 mb-4">
+                        Indica a quantidade de núcleos que um processador pode ter, Single-Core possui um núcleo,
+                        enquanto Multi-Core pode ter dois ou mais núcleos. Quanto maior for o número de cores, maior
+                        será a capacidade de processar tarefas de forma simultânea, acelerando as aplicações do
+                        computador.
+                    </p>
+                    <h3 class="fw-bolder mb-4 mt-5">Núcleos quad-core</h3>
+                    <p class="fs-5 mb-4">
+                        O modelo mais comum atualmente é o quad-core ou núcleo quádruplo, que trabalha como se tivesse "quatro
+                        cérebros". No momento de executar uma tarefa, acontece uma "divisão interna" dos dados
+                        entre os quatro núcleos presentes, isso faz com que o computador tenha uma resposta mais ágil
+                        e eficiente.
+                    </p>
+                    <h3 class="fw-bolder mb-4 mt-5">Arquitetura 32 ou 64 bits</h3>
+                    <p class="fs-5 mb-4">
+                        Essa característica remete à capacidade que o processador terá na hora de processar as
+                        informações do seu PC. Os chips com arquitetura de 64 bits permitem que a máquina aproveite
+                        quantidades superiores a 3GB de memória RAM, processando blocos maiores de dados mais
+                        rapidamente.
+                    </p>
+                    <h3 class="fw-bolder mb-4 mt-5">Cache</h3>
+                    <p class="fs-5 mb-4">
+                        O cache é uma pequena quantidade de memória que está acoplada dentro da matriz do
+                        processador, tendo como função armazenar informações e dados que são usados com
+                        frequência no intuito de acelerar tarefas repetitivas. Quanto maior, mais dados poderão ser
+                        armazenados e mais rápido o seu computador conseguirá executar as suas atividades.
+                    </p>
+                    <br>
+                    <a class="btn btn-primary" href="{% url 'processador_iniciante_pergunta-1' %}">Próximo</a>
+                </section>
+            </article>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,12 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class ProcessadorIniciante(models.Model):
-    pergunta = models.TextField()
-    alternativa_1 = models.TextField()
-    alternativa_2 = models.TextField()
-    alternativa_3 = models.TextField()
-    alternativa_4 = models.TextField()
-    resposta = models.TextField()
-
-    def __str__(self):
-        return self.pergunta
+    correto = models.IntegerField()
+    errado = models.IntegerField()

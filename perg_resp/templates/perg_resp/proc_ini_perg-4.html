@@ -1,0 +1,61 @@
+{% extends 'paginas/modelo.html' %}
+
+{% load static %}
+
+{% block menu %}
+<nav class="navbar navbar-expand-lg font-115 border-bottom shadow-sm">
+    <div class="container">
+        <a class="navbar-brand text-dark" href="{% url 'modulos' %}">MyPC</a>
+    </div>
+</nav>
+{% endblock %}
+
+{% block conteudo %}
+<div class="container ">
+    <form method='POST' id="questoes">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="pergunta">Um processador multi-core contém:</label>
+        </div>
+        <div class="form-check">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="alternativa" id="1" value="a">
+                <label class="form-check-label" for="1" id="resp1">
+                    Muitos núcleos
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="alternativa" id="2" value="b">
+                <label class="form-check-label" for="2" id="resp2">
+                    Muito poder de processamento
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="alternativa" id="3" value="c">
+                <label class="form-check-label" for="3" id="resp3">
+                    Mais de quatro núcleos
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="alternativa" id="4" value="d">
+                <label class="form-check-label" for="4" id="resp4">
+                    Somente um núcleo
+                </label>
+            </div>
+            <br>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>
+{% endblock %}
+{% block script %}
+<script type="text/javascript">
+    $("button[type='submit']").click(function(e) {
+        if($('input:radio:checked').length <= 0) {
+           alert( 'Selecione ao menos uma resposta' );
+           e.preventDefault();
+        }
+     });
+</script>
+{% endblock %}

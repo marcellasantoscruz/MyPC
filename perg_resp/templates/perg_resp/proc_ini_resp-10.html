@@ -1,0 +1,179 @@
+{% extends 'paginas/modelo.html' %}
+
+{% load static %}
+
+{% block menu %}
+<nav class="navbar navbar-expand-lg font-115 border-bottom shadow-sm">
+    <div class="container">
+        <a class="navbar-brand text-dark" href="{% url 'modulos' %}">MyPC</a>
+    </div>
+</nav>
+{% endblock %}
+
+{% block conteudo %}
+{% if resposta == 'a' %}
+    <div class="container">
+        <img class="img-fluid mx-auto d-block" src="{% static 'img/imagem_processador.jpg' %}">
+        <form method='POST' id="questoes">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="pergunta">
+                    Essa imagem representa:
+                </label>
+            </div>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option1" value="a" checked="checked" disabled="true">
+                    <label id="resp1" class="form-check-label text-danger" for="option1">
+                        Um processador Intel com o quatro núcleos "i7 900"
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option2" value="b" disabled="true">
+                    <label id="resp2" class="form-check-label" for="option2">
+                        Um processador Inte Core i7 com quatro núcleos "900"
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option3" value="c" disabled="true">
+                    <label id="resp3" class="form-check-label" for="option3">
+                        Um processador Core i7 900 com quatro núcleos Intel
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option4" value="d" disabled="true">
+                    <label id="resp4" class="form-check-label" for="option4">
+                        Um processador Intel Core i7 900 com quatro núcleos
+                    </label>
+                </div>
+                <br>
+            </div>
+            <br>
+            <a class="btn btn-primary" href="{% url 'resultado' %}">Próximo</a>
+        </form>
+    </div>
+{% elif resposta == 'b' %}
+    <div class="container">
+        <img class="img-fluid mx-auto d-block" src="{% static 'img/imagem_processador.jpg' %}">
+        <form method='POST' id="questoes">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="pergunta">
+                    Essa imagem representa:
+                </label>
+            </div>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option1" value="a" disabled="true">
+                    <label id="resp1" class="form-check-label" for="option1">
+                        Um processador Intel com o quatro núcleos "i7 900"
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option2" value="b" checked="checked" disabled="true">
+                    <label id="resp2" class="form-check-label text-danger" for="option2">
+                        Um processador Inte Core i7 com quatro núcleos "900"
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option3" value="c" disabled="true">
+                    <label id="resp3" class="form-check-label" for="option3">
+                        Um processador Core i7 900 com quatro núcleos Intel
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option4" value="d" disabled="true">
+                    <label id="resp4" class="form-check-label" for="option4">
+                        Um processador Intel Core i7 900 com quatro núcleos
+                    </label>
+                </div>
+                <br>
+            </div>
+            <br>
+            <a class="btn btn-primary" href="{% url 'resultado' %}">Próximo</a>
+        </form>
+    </div>
+{% elif resposta == 'c' %}
+    <div class="container">
+        <img class="img-fluid mx-auto d-block" src="{% static 'img/imagem_processador.jpg' %}">
+        <form method='POST' id="questoes">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="pergunta">
+                    Essa imagem representa:
+                </label>
+            </div>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option1" value="a" disabled="true">
+                    <label id="resp1" class="form-check-label" for="option1">
+                        Um processador Intel com o quatro núcleos "i7 900"
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option2" value="b" disabled="true">
+                    <label id="resp2" class="form-check-label" for="option2">
+                        Um processador Inte Core i7 com quatro núcleos "900"
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option3" value="c" checked="checked" disabled="true">
+                    <label id="resp3" class="form-check-label text-danger" for="option3">
+                        Um processador Core i7 900 com quatro núcleos Intel
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option4" value="d" disabled="true">
+                    <label id="resp4" class="form-check-label" for="option4">
+                        Um processador Intel Core i7 900 com quatro núcleos
+                    </label>
+                </div>
+                <br>
+            </div>
+            <br>
+            <a class="btn btn-primary" href="{% url 'resultado' %}">Próximo</a>
+        </form>
+    </div>
+{% elif resposta == 'd' %}
+    <div class="container">
+        <img class="img-fluid mx-auto d-block" src="{% static 'img/imagem_processador.jpg' %}">
+        <form method='POST' id="questoes">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="pergunta">
+                    Essa imagem representa:
+                </label>
+            </div>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option1" value="a" disabled="true">
+                    <label id="resp1" class="form-check-label text-danger" for="option1">
+                        Um processador Intel com o quatro núcleos "i7 900"
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option2" value="b" disabled="true">
+                    <label id="resp2" class="form-check-label text-danger" for="option2">
+                        Um processador Inte Core i7 com quatro núcleos "900"
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option3" value="c" disabled="true">
+                    <label id="resp3" class="form-check-label text-danger" for="option3">
+                        Um processador Core i7 900 com quatro núcleos Intel
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option4" value="d" checked="checked" disabled="true">
+                    <label id="resp4" class="form-check-label text-success" for="option4">
+                        Um processador Intel Core i7 900 com quatro núcleos
+                    </label>
+                </div>
+                <br>
+            </div>
+            <br>
+            <a class="btn btn-primary" href="{% url 'resultado' %}">Próximo</a>
+        </form>
+    </div>
+{% endif %}
+{% endblock %}

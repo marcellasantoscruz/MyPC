@@ -1,0 +1,179 @@
+{% extends 'paginas/modelo.html' %}
+
+{% load static %}
+
+{% block menu %}
+<nav class="navbar navbar-expand-lg font-115 border-bottom shadow-sm">
+    <div class="container">
+        <a class="navbar-brand text-dark" href="{% url 'modulos' %}">MyPC</a>
+    </div>
+</nav>
+{% endblock %}
+
+{% block conteudo %}
+{% if resposta == 'a' %}
+    <div class="container">      
+        <form method='POST' id="questoes">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="pergunta">
+                    O processador utiliza a linguagem de máquina para fazer cálculos e tomar decisões lógicas.
+                     Defina abaixo o processo de conversão de informações para dados: 
+                </label>
+            </div>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option1" value="a" checked="checked" disabled="true">
+                    <label id="resp1" class="form-check-label text-danger" for="option1">
+                        HUMANO - INTERFACE (EXIBIÇÃO) - PROCESSADOR (OPERAÇÕES) - MÁQUINA - HUMANO - INFORMAÇÕES - DADOS.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option2" value="b" disabled="true">
+                    <label id="resp2" class="form-check-label" for="option2">
+                        PROCESSADOR (OPERAÇÕES) - HUMANO - DADOS - HUMANO - INFORMAÇÕES - MÁQUINA - INTERFACE (EXIBIÇÃO).
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option3" value="c" disabled="true">
+                    <label id="resp3" class="form-check-label" for="option3">
+                        HUMANO - INFORMAÇÕES - INTERFACE (EXIBIÇÃO) - PROCESSADOR (OPERAÇÕES) - MÁQUINA - DADOS - HUMANO.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option4" value="d" disabled="true">
+                    <label id="resp4" class="form-check-label" for="option4">
+                        HUMANO - INFORMAÇÕES - MÁQUINA - DADOS - PROCESSADOR (OPERAÇÕES) - INTERFACE (EXIBIÇÃO) - HUMANO.
+                    </label>
+                </div>
+                <br>
+            </div>
+            <br>
+            <a class="btn btn-primary" href="{% url 'processador_iniciante_pergunta-3' %}">Próximo</a>
+        </form>
+    </div>
+{% elif resposta == 'b' %}
+    <div class="container">      
+        <form method='POST' id="questoes">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="pergunta">
+                    O processador utiliza a linguagem de máquina para fazer cálculos e tomar decisões lógicas.
+                    Defina abaixo o processo de conversão de informações para dados:
+                </label>
+            </div>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option1" value="a" disabled="true">
+                    <label id="resp1" class="form-check-label" for="option1">
+                        HUMANO - INTERFACE (EXIBIÇÃO) - PROCESSADOR (OPERAÇÕES) - MÁQUINA - HUMANO - INFORMAÇÕES - DADOS.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option2" value="b" checked="checked" disabled="true">
+                    <label id="resp2" class="form-check-label text-danger" for="option2">
+                        PROCESSADOR (OPERAÇÕES) - HUMANO - DADOS - HUMANO - INFORMAÇÕES - MÁQUINA - INTERFACE (EXIBIÇÃO).
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option3" value="c" disabled="true">
+                    <label id="resp3" class="form-check-label" for="option3">
+                        HUMANO - INFORMAÇÕES - INTERFACE (EXIBIÇÃO) - PROCESSADOR (OPERAÇÕES) - MÁQUINA - DADOS - HUMANO.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option4" value="d" disabled="true">
+                    <label id="resp4" class="form-check-label" for="option4">
+                        HUMANO - INFORMAÇÕES - MÁQUINA - DADOS - PROCESSADOR (OPERAÇÕES) - INTERFACE (EXIBIÇÃO) - HUMANO.
+                    </label>
+                </div>
+                <br>
+            </div>
+            <br>
+            <a class="btn btn-primary" href="{% url 'processador_iniciante_pergunta-3' %}">Próximo</a>
+        </form>
+    </div>
+{% elif resposta == 'c' %}
+    <div class="container">      
+        <form method='POST' id="questoes">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="pergunta">
+                    O processador utiliza a linguagem de máquina para fazer cálculos e tomar decisões lógicas.
+                    Defina abaixo o processo de conversão de informações para dados:
+                </label>
+            </div>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option1" value="a" disabled="true">
+                    <label id="resp1" class="form-check-label" for="option1">
+                        HUMANO - INTERFACE (EXIBIÇÃO) - PROCESSADOR (OPERAÇÕES) - MÁQUINA - HUMANO - INFORMAÇÕES - DADOS.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option2" value="b" disabled="true">
+                    <label id="resp2" class="form-check-label" for="option2">
+                        PROCESSADOR (OPERAÇÕES) - HUMANO - DADOS - HUMANO - INFORMAÇÕES - MÁQUINA - INTERFACE (EXIBIÇÃO).
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option3" value="c" checked="checked" disabled="true">
+                    <label id="resp3" class="form-check-label text-danger" for="option3">
+                        HUMANO - INFORMAÇÕES - INTERFACE (EXIBIÇÃO) - PROCESSADOR (OPERAÇÕES) - MÁQUINA - DADOS - HUMANO.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option4" value="d" disabled="true">
+                    <label id="resp4" class="form-check-label" for="option4">
+                        HUMANO - INFORMAÇÕES - MÁQUINA - DADOS - PROCESSADOR (OPERAÇÕES) - INTERFACE (EXIBIÇÃO) - HUMANO.
+                    </label>
+                </div>
+                <br>
+            </div>
+            <br>
+            <a class="btn btn-primary" href="{% url 'processador_iniciante_pergunta-3' %}">Próximo</a>
+        </form>
+    </div>
+{% elif resposta == 'd' %}
+    <div class="container">      
+        <form method='POST' id="questoes">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="pergunta">
+                    O processador utiliza a linguagem de máquina para fazer cálculos e tomar decisões lógicas.
+                    Defina abaixo o processo de conversão de informações para dados:
+                </label>
+            </div>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option1" value="a" disabled="true">
+                    <label id="resp1" class="form-check-label text-danger" for="option1">
+                        HUMANO - INTERFACE (EXIBIÇÃO) - PROCESSADOR (OPERAÇÕES) - MÁQUINA - HUMANO - INFORMAÇÕES - DADOS.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option2" value="b" disabled="true">
+                    <label id="resp2" class="form-check-label text-danger" for="option2">
+                        PROCESSADOR (OPERAÇÕES) - HUMANO - DADOS - HUMANO - INFORMAÇÕES - MÁQUINA - INTERFACE (EXIBIÇÃO).
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option3" value="c" disabled="true">
+                    <label id="resp3" class="form-check-label text-danger" for="option3">
+                        HUMANO - INFORMAÇÕES - INTERFACE (EXIBIÇÃO) - PROCESSADOR (OPERAÇÕES) - MÁQUINA - DADOS - HUMANO.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="alternativa" id="option4" value="d" checked="checked" disabled="true">
+                    <label id="resp4" class="form-check-label text-success" for="option4">
+                        HUMANO - INFORMAÇÕES - MÁQUINA - DADOS - PROCESSADOR (OPERAÇÕES) - INTERFACE (EXIBIÇÃO) - HUMANO.
+                    </label>
+                </div>
+                <br>
+            </div>
+            <br>
+            <a class="btn btn-primary" href="{% url 'processador_iniciante_pergunta-3' %}">Próximo</a>
+        </form>
+    </div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'paginas/modelo.html' %}
+
+{% load static %}
+ 
+{% block menu %}
+<nav class="navbar navbar-expand-lg font-115 border-bottom shadow-sm">
+    <div class="container">
+        <a class="navbar-brand text-dark" href="{% url 'modulos' %}">MyPC</a>
+    </div>
+</nav>
+{% endblock %}
+
+{% block conteudo %}
+<div class="container" align="center">
+    {% if passou == 1 %}
+    <h3>Módulo Concluido!!!</h3>
+    <h5>Respostas certas: {{certo}}</h5>
+    <h5>Respostas Erradas: {{errado}}</h5>
+    <img class="img-fluid" src="{% static 'img/imagem_passou.gif' %}">
+    {% else %}
+    <h3>Tente Novamente!!</h3>
+    <h5>Respostas certas: {{certo}}</h5>
+    <h5>Respostas Erradas: {{errado}}</h5>
+    <img class="img-fluid" src="{% static 'img/imagem_nao_passou.gif' %}">
+    {% endif %}
+</div>
+{% endblock %}

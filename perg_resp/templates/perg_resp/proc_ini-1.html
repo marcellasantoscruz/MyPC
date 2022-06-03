@@ -1,0 +1,48 @@
+{% extends 'paginas/modelo.html' %}
+
+{% load static %}
+
+{% block menu %}
+<nav class="navbar navbar-expand-lg font-115 border-bottom shadow-sm">
+    <div class="container">
+        <a class="navbar-brand text-dark" href="{% url 'modulos' %}">MyPC</a>
+    </div>
+</nav>
+{% endblock %}
+
+{% block conteudo %}
+<div class="container mt-2">
+    <div class="d-flex justify-content-center">
+        <div class="col-lg-9">
+            <article>
+                <section class="mb-5">
+                    <h3 class="fw-bolder mb-4 mt-5">Aprenda mais sobre o processador!</h3>
+                    <br>
+                    <p class="fs-5 mb-4">
+                        O processador, também chamado de CPU (central processing unit), é o componente de
+                        hardware responsável por processar dados e transformar em informação. Seu funcionamento
+                        acontece como uma espécie de microchip especializado, onde sua principal função é acelerar,
+                        endereçar, resolver ou preparar os dados que serão "lidos" por sua máquina.
+                    </p>
+                    <p class="fs-5 mb-4">
+                        Basicamente, é ele quem receberá em padrão binário (0 e 1) um determinado volume de
+                        dados e, com base nas instruções que já estão armazenadas em sua memória interna, realizará
+                        a tranformação destes dados em informação, transmitindo-os diretamente para a placa-mãe.
+                    </p>
+                    <p class="fs-5 mb-4">
+                        Outras funções do processador são fazer cálculos e tomar decisões lógicas. Sendo isso possível
+                        pela utilização da linguagem de máquina, tendo como função uma conversão de informações
+                        para dados.
+                    </p>
+                    <p class="fs-5 mb-4">
+                        Vamos seguir essa lógica para entender melhor esse processo:
+                    </p>
+                    <img class="img-fluid mx-auto d-block" src="{% static 'img/logica_processador.JPG' %}">
+                    <br>
+                    <a class="btn btn-primary" href="{% url 'processador_iniciante-2' %}">Próximo</a>
+                </section>
+            </article>
+        </div>
+    </div>
+</div>
+{% endblock %}

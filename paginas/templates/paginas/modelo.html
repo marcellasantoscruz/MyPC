@@ -14,6 +14,8 @@
         <link href="{% static 'fontawesome/css/all.min.css' %}" rel="stylesheet" type="text/css"/>
         <link href="{% static 'css/modelo.css' %}" rel="stylesheet" type="text/css"/>
 
+        
+
         <style>
             .bd-placeholder-img {
                 font-size: 1.125rem;
@@ -33,34 +35,13 @@
     </head>
     <body>
         {% block menu %}
-        {% if request.user.is_authenticated %}
-        <nav class="navbar navbar-expand-lg font-115 border-bottom shadow-sm">
-            <div class="container">
-                <a class="navbar-brand text-dark" href="{% url 'modulos' %}">MyPC</a>
-
-                <div class="dropdown">
-                    <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
-                        <i class="fa fa-user-circle" aria-hidden="true"></i>
-                        <span id="username">{{ request.user }}</span>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">Meus dados</a>
-                        <a class="dropdown-item" href="#">Alterar senha</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'logout' %}">Sair</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        {% else %}
         <nav class="navbar navbar-expand-lg font-115 border-bottom shadow-sm">
             <div class="container">
                 <a class="navbar-brand text-dark" href="{% url 'index' %}">MyPC</a>
             </div>
         </nav>
-        {% endif %}
-
         {% endblock %}
+
         <div class="container px-3 py-3 pt-5 pb-4">
             {% block conteudo %}
             <h1 class="display-4">Conteudo</h1>
@@ -70,14 +51,15 @@
         {% block rodape %}
         <footer class="container border-top text-muted text-center">
             <small class="d-block">MyPC &copy; 2022</small>
-            <small class="d-block">Desenvolvido por: #####</small>
             <small><a href="https://storyset.com/work">Work illustrations by Storyset</a></small>
-            <small><a href="https://lukaszadam.com/illustrations"></a></small>
         </footer>
         {% endblock %}
 
         <script type="text/javascript" src="{% static 'js/jquery-3.3.1.slim.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+
+        {% block script %}
+        {% endblock %}
     </body>
 </html>
